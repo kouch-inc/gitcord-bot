@@ -1,0 +1,22 @@
+{
+  "name": "gitcord",
+  "version": "1.0.0",
+  "description": "Create Github Issues from Discord messages. Add to a channel of your choice, set your Github repo, and you're good to go!",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "discord",
+    "github",
+    "bot"
+  ],
+  "author": "Kouch, Inc.",
+  "license": "ISC",
+  "dependencies": {
+    "@octokit/rest": "^18.0.9",
+    "discord.js": "git+https://github.com/vecchiotom/discord.js.git",
+    "dotenv": "^8.2.0",
+    "github-api": "^3.3.0"
+  }
+}
