@@ -2,21 +2,27 @@ const config = require('dotenv').config();
 const Discord = require('discord.js');
 const { Octokit } = require("@octokit/rest");
 
-// Initialize Discord Bot
 const prefix = '!';
 const owner = config.OWNER;
 const repo = config.REPO;
 const client = new Discord.Client();
-client.once('ready', () => {
-    console.log(`Ready!`);
-});
 const gh = new Octokit({
     auth: config.CLIENT_SECRET,
 });
+
+var args = process.argv.slice(2);
+console.log('channel: ', args[1]);
+const channel = args[1];
+
+client.once('ready', () => {
+    console.log(`Ready!`);
+});
+
 client.login(config.DISCORD_TOKEN);
 client.on('message', function (message) {
     if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return;
+    if (message.channel !== channel) return;
     const commandBody = message.content.slice(prefix.length);
     if(commandBody.includes('[TITLE]')) {
         console.log('commandBody: ' + commandBody);
