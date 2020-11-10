@@ -4,7 +4,7 @@ You can run the Gitcord Bot locally by running the following command in your loc
 
 When your changes and complete and you'd like to push them to production, use the following command: `git push heroku master`
 
-Before pushing to `heroku master`, make sure you are logged in by running `heroku login` and entering your heroku username and password.
+Before pushing to `heroku master`, make sure you are logged in to Heroku by running `heroku login` and entering your heroku username and password.
 
 Note: Unfortunately, since Github has recently changed their `master` branches to `main`, you'll need to be careful not to run `git push` as this can disable your ability to push up to heroku.
 
